@@ -1,0 +1,32 @@
+---
+
+  - name: "Run yum update"
+    become_user: root
+    yum: name="*" state=latest
+    tags:
+     - yumupdate
+     - yum
+
+  - name: "Install core packages"
+    become_user: root
+    yum: name={{ item }} state=installed
+    with_items:
+         - wget
+         - sudo
+         - ntp
+         - screen
+    tags:
+     - yum
+
+  - name: "YUM :: Install common command-line tools & libraries"
+    become_user: root
+    action: yum name={{ item }} state=installed
+    with_items:
+         - yum
+         - nano
+         - vi
+         - vim
+         - man
+         - tree
+    tags:
+     - yum

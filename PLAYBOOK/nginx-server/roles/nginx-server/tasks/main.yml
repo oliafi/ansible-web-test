@@ -1,0 +1,4 @@
+---
+
+  - name: Configure webserver with nginx
+    yum: name=nginx update_cache=yes

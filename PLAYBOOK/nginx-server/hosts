@@ -1,0 +1,2 @@
+[nginx-test]
+demo1 ansible_ssh_host=35.230.159.3 ansible_user=olga

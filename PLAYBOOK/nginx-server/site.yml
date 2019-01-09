@@ -1,0 +1,7 @@
+---
+
+- hosts: demo1
+  become_user: root
+  become: yes
+  roles: 
+     - { role: base-install }
